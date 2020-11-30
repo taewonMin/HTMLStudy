@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>My Shop</title>
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+<body>
+	<header>
+		<h1>Web Shopping</h1>
+	</header>
+	<nav>
+		<ul id="menubar">
+			<li><a href="main.html" target="productView">HOME</a></li>
+			<li><a href="#">SHOPPING ABOUT</a></li>
+			<li><a href="#">NEWS</a></li>
+			<li><a href="#">MY ACCOUNT</a></li>
+			<li><a href="#">CONTACTS</a></li>
+		</ul>
+	</nav>
+	<aside id="left">
+		<ul id="category">
+			<li onclick="productView.location.href='computer.html'">컴퓨터</li>
+			<li onclick="productView.location.href='clothing.html'">의류</li>
+			<li onclick="productView.location.href='music.html'">음악</li>
+			<li onclick="productView.location.href='movie.html'">영화</li>
+			<li onclick="productView.location.href='sports.html'">스포츠/레저</li>
+			<li onclick="productView.location.href='interior.html'">가구/인테리어</li>
+			<li onclick="productView.location.href='food.html'">식품</li>
+		</ul>
+	</aside>
+	<section>
+		<iframe src="main.html" name="productView">
+		</iframe>
+	</section>
+	<aside id="right">
+		<div id="shopcart">
+			<h3>Shopping Cart</h3>
+			<p>현재 쇼핑카트에 물건이 없습니다.</p>
+			<a href="shopcart.html" target="productView">쇼핑카트 보기</a>
+		</div>
+		<div id="login">
+			<h3>Log In</h3>
+			<form action="">
+				아이디<br>
+				<input type="text" name="userId"><br>
+				비밀번호<br>
+				<input type="text" name="password"><br>
+				<button type="button">로그인</button>
+				<button type="reset">초기화</button>
+			</form>
+			<br>
+			<a href="register.html" target="productView">회원가입</a>
+			<a href="register.html" target="productView">비밀번호 분실</a>
+		</div>
+	</aside>
+	<footer>
+		<p>footer</p>
+	</footer>
+</body>
+</html>
