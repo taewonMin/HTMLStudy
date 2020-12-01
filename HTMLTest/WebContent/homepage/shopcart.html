@@ -1,10 +1,60 @@
-<!DOCTYPE html>
+<!DOCTYPE html>	
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Shop cart</title>
+	<meta charset="UTF-8">
+	<title>Shop cart</title>
+	<style type="text/css">
+		form {
+			margin: 100px auto;
+			width: 600px;
+		}
+		table {
+			width:600px;
+			border: 2px solid #99CCFF;
+			border-collapse: collapse;
+		}
+		th, td {
+			border: 1px solid #99CCCC;
+			padding: 5px;
+			text-align: center;
+		}
+		#price {
+			
+		}
+		#total, #qty {
+			width: 150px;
+		}
+		button {
+			margin-top: 5px;
+		}
+	</style>
 </head>
 <body>
-	<h1>Shop cart</h1>
-</body>
+	<form>
+		<table>
+			<caption>Shopping Cart</caption>
+			<tr>
+				<th>품목</th>
+				<th>가격</th>
+				<th>수량</th>
+				<th>합계</th>
+			</tr>
+			<tr>
+				<td>테스트용</td>
+				<td id="price">2000원</td>
+				<td><input type="number" id="qty"></td>
+				<td><input type="text" id="total"></td>
+			</tr>
+			<tr>
+				<td>테스트용</td>
+				<td>20000000000원</td>
+				<td><input type="number" id="qty"></td>
+				<td><input type="text" id="total"></td>
+			</tr>
+		</table>
+		<button type="button">계산</button>
+		<button type="button">구매</button>
+		<button type="reset">초기화</button>
+	</form>
+</body> 
 </html>

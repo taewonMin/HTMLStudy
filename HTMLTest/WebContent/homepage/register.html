@@ -3,8 +3,55 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SingUp</title>
+	<style type="text/css">
+		form {
+			width: 500px;
+			margin: 100px auto;
+		}
+		#category {
+			width: 40%;
+			float: left;
+			line-height: 145%;
+		}
+		#input {
+			width: 60%;
+			float: right;
+		}
+	</style>
 </head>
 <body>
-	<h1>Register view</h1>
+	<form action="">
+		<fieldset>
+			<legend>회원정보입력</legend>
+				<div id="category">
+					아이디<br>
+					패스워드<br>
+					패스워드 확인<br>
+					이름<br>
+					휴대폰 번호<br>
+					이메일<br>
+					생일<br>
+					홈페이지<br>
+					성별<br>
+				</div>
+				<div id="input">
+					<input type="text" name="userId">
+					<button type="button">중복검사</button>
+					<input type="password" name="password"><br>
+					<input type="password" name="passwordCheck"><br>
+					<input type="text" name="userName"><br>
+					<input type="tel" name="userTel"><br>
+					<input type="email" name="userEmail"><br>
+					<input type="date" name="userBirth"><br>
+					<input type="text" name="homepage"><br>
+					<input type="radio" name="gender" id="genderM" value="M">
+					<label for="genderM">남성</label>
+					<input type="radio" name="gender" id="genderF" value="F">
+					<label for="genderF">여성</label>
+				</div>
+		</fieldset>
+		<button type="button" style="width:150px; margin-left:10px;">제출</button>
+		<button type="reset" style="width:150px;">초기화</button>
+	</form>
 </body>
 </html>

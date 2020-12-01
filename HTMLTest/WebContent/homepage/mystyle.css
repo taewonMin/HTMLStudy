@@ -1,5 +1,7 @@
 @charset "UTF-8";
 body {
+	width: 1500px;
+	margin: 100px auto;
 }
 header {
 	border: 3px solid red;
@@ -22,7 +24,7 @@ nav {
 
 aside {
 	border: 3px solid green;
-	width: calc(17.5% - 6px);
+	width: calc(17.5% - 21px);
 	height: 600px;
 }
 aside#left{
@@ -41,12 +43,16 @@ aside#left{
 
 aside#right{
 	float: right;
+	padding: 0 15px;
+}
+aside#right button {
+	margin-top: 5px;
 }
 
 section {
 	float: left;
 	width: calc(65% - 6px);
-	height: 1000px;
+	height: 600px;
 }
 section iframe {
 	width: 100%;
