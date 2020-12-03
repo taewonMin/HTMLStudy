@@ -18,10 +18,7 @@
 			padding: 5px;
 			text-align: center;
 		}
-		#price {
-			
-		}
-		#total, #qty {
+		.total, .qty {
 			width: 150px;
 		}
 		button {
@@ -40,21 +37,48 @@
 				<th>합계</th>
 			</tr>
 			<tr>
-				<td>테스트용</td>
-				<td id="price">2000원</td>
-				<td><input type="number" id="qty"></td>
-				<td><input type="text" id="total"></td>
+				<td>컴퓨터 세트</td>
+				<td class="price">2,000,000원</td>
+				<td><input type="number" class="qty" min="0"></td>
+				<td><input type="text" class="total"></td>
 			</tr>
 			<tr>
-				<td>테스트용</td>
-				<td>20000000000원</td>
-				<td><input type="number" id="qty"></td>
-				<td><input type="text" id="total"></td>
+				<td>티셔츠</td>
+				<td class ="price">50,000원</td>
+				<td><input type="number" class="qty" min="0"></td>
+				<td><input type="text" class="total"></td>
+			</tr>
+			<tr>
+				<td>음악파일</td>
+				<td class ="price">1,000원</td>
+				<td><input type="number" class="qty" min="0"></td>
+				<td><input type="text" class="total"></td>
+			</tr>
+			<tr>
+				<td>영화파일</td>
+				<td class ="price">5,000원</td>
+				<td><input type="number" class="qty" min="0"></td>
+				<td><input type="text" class="total"></td>
 			</tr>
 		</table>
-		<button type="button">계산</button>
-		<button type="button">구매</button>
+		<button type="button" onclick="calc();">계산</button>
+		<button type="button" onclick="alert('기능 구현중..')">구매</button>
 		<button type="reset">초기화</button>
 	</form>
-</body> 
+</body>
+<script type="text/javascript">
+	function calc(){
+		var priceList = document.getElementsByClassName("price");
+		var qtyList = document.getElementsByClassName("qty");
+		var totalList = document.getElementsByClassName("total");
+		for(var i=0; i<qtyList.length; i++){
+			var temp = priceList[i].innerHTML.replaceAll(",", "").replaceAll("원","");
+			totalList[i].value = numberWithCommas(temp*qtyList[i].value)+"원";
+		}
+	}
+	// 콤마찍기
+	function numberWithCommas(x) {
+	    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	}
+</script>
 </html>
