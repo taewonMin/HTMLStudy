@@ -36,7 +36,7 @@
 	<aside id="right">
 		<div id="shopcart">
 			<h3>Shopping Cart</h3>
-			<p>현재 쇼핑카트에 물건이 없습니다.</p>
+			<p id="shoppingList">현재 쇼핑카트에 물건이 없습니다.</p>
 			<a href="shopcart.html" target="productView">쇼핑카트 보기</a>
 		</div>
 		<div id="login">
@@ -59,16 +59,15 @@
 	</footer>
 </body>
 <script type="text/javascript">
+	var myInfo = new Array();
 	var temp = window.location.search.replace("?","");
 	var list = temp.split("&");
-	var myInfo = new Array();
 	for(var i=0; i<list.length; i++){
 		var tmp = list[i].split("=");
 		myInfo[myInfo.length] = tmp[1];
 	}
-	if(myInfo.length > 0){
-		document.getElementById("userId").value = myInfo[0];
-		document.getElementById("password").value = myInfo[1];
+	if(myInfo.length > 1){
+		document.getElementById("shoppingList").innerHTML = myInfo[0] + " " + myInfo[1] + "원<br>";
 	}
 </script>
 </html>
