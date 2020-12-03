@@ -20,7 +20,7 @@
 	</style>
 </head>
 <body>
-	<form action="">
+	<form action="index.html" method="get" target="_parent">
 		<fieldset>
 			<legend>회원정보입력</legend>
 				<div id="category">
@@ -35,23 +35,25 @@
 					성별<br>
 				</div>
 				<div id="input">
-					<input type="text" name="userId">
+					<input type="text" name="userId" required>
 					<button type="button" onclick="alert('기능 구현중..')">중복검사</button>
-					<input type="password" name="password"><br>
-					<input type="password" name="passwordCheck"><br>
-					<input type="text" name="userName"><br>
+					<input type="password" name="password" required><br>
+					<input type="password" name="passwordCheck" required><br>
+					<input type="text" name="userName" required><br>
 					<input type="tel" name="userTel"><br>
 					<input type="email" name="userEmail"><br>
 					<input type="date" name="userBirth"><br>
 					<input type="text" name="homepage"><br>
-					<input type="radio" name="gender" id="genderM" value="M">
+					<input type="radio" name="gender" id="genderM" value="M" required>
 					<label for="genderM">남성</label>
-					<input type="radio" name="gender" id="genderF" value="F">
+					<input type="radio" name="gender" id="genderF" value="F" required>
 					<label for="genderF">여성</label>
 				</div>
 		</fieldset>
-		<button type="button" style="width:150px; margin:5px 10px;" onclick="alert('기능 구현중..')">제출</button>
+		<button type="submit" style="width:150px; margin:5px 10px;" >제출</button>
 		<button type="reset" style="width:150px;">초기화</button>
 	</form>
 </body>
+<script type="text/javascript">
+</script>
 </html>
