@@ -50,7 +50,7 @@
 				<button type="reset">초기화</button>
 			</form>
 			<br>
-			<a href="register.html" target="productView">회원가입</a>
+			<a href="#" onclick="openPop();">회원가입</a>
 			<a href="register.html" target="productView">비밀번호 분실</a>
 		</div>
 	</aside>
@@ -68,6 +68,12 @@
 	}
 	if(myInfo.length > 1){
 		document.getElementById("shoppingList").innerHTML = myInfo[0] + " " + myInfo[1] + "원<br>";
+	}
+	
+	function openPop(){
+		window.open("https://www.google.com", "_pop", "left=100,top=100,width=500,height=300");
+		window.open("register.html", "_pop", "width=200px,heigh=200px");
+		
 	}
 </script>
 </html>
