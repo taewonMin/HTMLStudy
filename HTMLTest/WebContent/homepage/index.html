@@ -7,11 +7,12 @@
 </head>
 <body>
 	<header>
-		<h1>Web Shopping</h1>
+		<img alt="메인 아이콘" src="images/mainIcon.png">
+		<h1>MIN'S SHOP</h1>
 	</header>
 	<nav>
 		<ul id="menubar">
-			<li><a href="main.html" target="productView">HOME</a></li>
+			<li><a href="computer.html" target="productView">HOME</a></li>
 			<li><a href="#">SHOPPING ABOUT</a></li>
 			<li><a href="#">NEWS</a></li>
 			<li><a href="#">MY ACCOUNT</a></li>
@@ -30,7 +31,7 @@
 		</ul>
 	</aside>
 	<section>
-		<iframe src="main.html" name="productView">
+		<iframe src="computer.html" name="productView">
 		</iframe>
 	</section>
 	<aside id="right">
@@ -50,12 +51,12 @@
 				<button type="reset">초기화</button>
 			</form>
 			<br>
-			<a href="#" onclick="openPop();">회원가입</a>
-			<a href="register.html" target="productView">비밀번호 분실</a>
+			<a href="#" onclick="openPop();">회원가입</a> | 
+			<a href="#" onclick="alert('기능 구현중..')">비밀번호 분실</a>
 		</div>
 	</aside>
 	<footer>
-		<p>footer</p>
+		<p>2020.12.07</p><p>대덕인재개발원 042-1234-5678</p>
 	</footer>
 </body>
 <script type="text/javascript">
@@ -71,8 +72,7 @@
 	}
 	
 	function openPop(){
-		window.open("https://www.google.com", "_pop", "left=100,top=100,width=500,height=300");
-		window.open("register.html", "_pop", "width=200px,heigh=200px");
+		window.open("register.html", "PopUp", "width=520px,height=310px");
 		
 	}
 </script>
