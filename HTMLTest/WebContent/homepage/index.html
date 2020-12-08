@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>My Shop</title>
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+<body>
+	<header>
+		<img alt="메인 아이콘" src="images/mainIcon.png">
+		<h1>MIN'S SHOP</h1>
+	</header>
+	<nav>
+		<ul id="menubar">
+			<li><a href="computer.html" target="productView">HOME</a></li>
+			<li><a href="#">SHOPPING ABOUT</a></li>
+			<li><a href="#">NEWS</a></li>
+			<li><a href="#">MY ACCOUNT</a></li>
+			<li><a href="#">CONTACTS</a></li>
+		</ul>
+	</nav>
+	<aside id="left">
+		<ul id="category">
+			<li onclick="productView.location.href='computer.html'">컴퓨터</li>
+			<li onclick="productView.location.href='clothing.html'">의류</li>
+			<li onclick="productView.location.href='music.html'">음악</li>
+			<li onclick="productView.location.href='movie.html'">영화</li>
+			<li onclick="productView.location.href='sports.html'">스포츠/레저</li>
+			<li onclick="productView.location.href='interior.html'">가구/인테리어</li>
+			<li onclick="productView.location.href='food.html'">식품</li>
+		</ul>
+	</aside>
+	<section>
+		<iframe src="computer.html" name="productView">
+		</iframe>
+	</section>
+	<aside id="right">
+		<div id="shopcart">
+			<h3>Shopping Cart</h3>
+			<p id="shoppingList">현재 쇼핑카트에 물건이 없습니다.</p>
+			<a href="shopcart.html" target="productView">쇼핑카트 보기</a>
+		</div>
+		<div id="login">
+			<h3>Log In</h3>
+			<form action="">
+				아이디<br>
+				<input type="text" name="userId" id="userId"><br>
+				비밀번호<br>
+				<input type="password" name="password" id="password"><br>
+				<button type="button" onclick="alert('기능 구현중');">로그인</button>
+				<button type="reset">초기화</button>
+			</form>
+			<br>
+			<a href="#" onclick="openPop();">회원가입</a> | 
+			<a href="#" onclick="alert('기능 구현중..')">비밀번호 분실</a>
+		</div>
+	</aside>
+	<footer>
+		<p>2020.12.07</p><p>대덕인재개발원 042-1234-5678</p>
+	</footer>
+</body>
+<script type="text/javascript">
+	var myInfo = new Array();
+	var temp = window.location.search.replace("?","");
+	var list = temp.split("&");
+	for(var i=0; i<list.length; i++){
+		var tmp = list[i].split("=");
+		myInfo[myInfo.length] = tmp[1];
+	}
+	if(myInfo.length > 1){
+		document.getElementById("shoppingList").innerHTML = myInfo[0] + " " + myInfo[1] + "원<br>";
+	}
+	
+	function openPop(){
+		window.open("register.html", "PopUp", "width=520px,height=310px");
+		
+	}
+</script>
+</html>

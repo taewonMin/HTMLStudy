@@ -19,7 +19,7 @@
 	</style>
 </head>
 <body>
-	<form action="index.html" method="get" target="_parent">
+	<form action="index.html" method="get">
 		<fieldset>
 			<legend>회원정보입력</legend>
 				<div id="category">
@@ -35,7 +35,7 @@
 				</div>
 				<div id="input">
 					<input type="text" name="userId" required>
-					<button type="button" onclick="alert('기능 구현중..')">중복검사</button>
+					<button type="button" onclick="alert('기능 구현중..');">중복검사</button>
 					<input type="password" name="password" required><br>
 					<input type="password" name="passwordCheck" required><br>
 					<input type="text" name="userName" required><br>
@@ -49,7 +49,7 @@
 					<label for="genderF">여성</label>
 				</div>
 		</fieldset>
-		<button type="submit" style="width:150px; margin:5px 10px;" >제출</button>
+		<button type="button" style="width:150px; margin:5px 10px;" onclick="window.close();">제출</button>
 		<button type="reset" style="width:150px;">초기화</button>
 	</form>
 </body>
