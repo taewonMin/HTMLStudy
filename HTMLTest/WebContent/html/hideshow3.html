@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>show, hide 예제</title>
+	<script src="../js/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("a").click(function(){
+				event.preventDefault();
+				$("img").attr("src", this.href);
+			});
+		});
+	</script>
+</head>
+<body>
+	<h1>교재 목록</h1>
+	<ul>
+		<li><a id="link1" href="../images/winterNight.jpg">아름다운 겨울밤</a></li>
+		<li><a id="link2" href="../images/mountain1.jpg">멋진 산!</a></li>
+		<li><a id="link3" href="../images/tiger.jpg">무서운 호랑이ㄷㄷ</a></li>
+	</ul>
+	<img alt="기본이미지" src="../../images/winterNight.png">
+</body>
+</html>
