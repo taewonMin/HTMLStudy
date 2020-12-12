@@ -8,18 +8,33 @@
 		$(document).ready(function(){
 			$("a").click(function(){
 				event.preventDefault();
+			});
+			
+			$("#link1").click(function(){
+				$("img").hide(); 
 				$("img").attr("src", this.href);
+				$("img").show(1000);
+			});
+			$("#link2").click(function(){
+				$("img").hide(); 
+				$("img").attr("src", this.href);
+				$("img").fadeIn(1000);
+			});
+			$("#link3").click(function(){
+				$("img").hide(); 
+				$("img").attr("src", this.href);
+				$("img").slideDown(1000);
 			});
 		});
 	</script>
 </head>
 <body>
-	<h1>교재 목록</h1>
+	<h1>이미지 목록</h1>
 	<ul>
 		<li><a id="link1" href="../images/winterNight.jpg">아름다운 겨울밤</a></li>
 		<li><a id="link2" href="../images/mountain1.jpg">멋진 산!</a></li>
 		<li><a id="link3" href="../images/tiger.jpg">무서운 호랑이ㄷㄷ</a></li>
 	</ul>
-	<img alt="기본이미지" src="../../images/winterNight.png">
+	<img alt="기본이미지" src="../images/winterNight.jpg">
 </body>
 </html>
