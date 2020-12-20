@@ -3,75 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Ajax 예제 2</title>
-	<script src="../../js/jquery-3.5.1.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$("#tableBtn").click(function() {
-				$.ajax({
-					url: "cd_catalog.xml"
-					,type: "post"
-					,data: ""
-					,datatype: "xml"
-					,success: function(data){
-						makeTable(data);
-					}
-					,error: function(xhr){
-						console.log(xhr);
-					}
-				});
-			});
-		});
-		
-		function makeTable(data){
-			var header = ["NO", "TITLE", "ARTIST", "COUNTRY", "COMPANY", "PRICE", "YEAR"];	// 테이블 컬럼명
-			var cd = data.getElementsByTagName("CD");
-			
-			var resultStr = "<table border='1' style='border-collapse: collapse;'>";
-			// th 생성
-			resultStr += "<tr>";
-			for(var i in header){
-				resultStr += "<th>" + header[i] + "</th>";
-			}
-			resultStr += "</tr>"
-			
-			for(var i=0; i<cd.length; i++){
-				
-				var temp = new Array();
-				$(cd[i].children).each(function(){
-					temp[temp.length] = this;
-				});
-				console.log(temp);
-				resultStr += "<tr>";
-				for(var j=0; j<header.length; j++){
-					
-					var data;
-					if(j==0){
-						data = i+1;
-					}else{
-						var idx = temp.indexOf(header[j]);
-						data = idx == -1 ? "" : $(temp[idx]).text();
-					}
-					resultStr += "<td>" + data + "</td>";
-				}
-				resultStr += "</tr>";
-			}
-			resultStr += "</table>";
-			
-			$("#resultDiv").html(resultStr);
-		}
-		
-		function makeText(data){
-			var title = data.getElementsByTagName("TITLE");
-			
-			var resultStr = "";
-			for(var i=0; i<title.length; i++){
-				var tmp = title[i].childNodes[0].nodeValue;
-				resultStr += "<p>" + tmp + "</p>";
-			}
-			
-			$("#resultDiv").html(resultStr);
-		}
-	</script>
+	<script src="../js/jquery-3.5.1.js"></script>
+	<script src="../js/ajax2.js"></script>
 </head>
 <body>
 	<h3>CD목록 가져오기</h3>
