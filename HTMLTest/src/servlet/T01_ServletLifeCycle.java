@@ -3,6 +3,7 @@ package servlet;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
  * (서블릿이란? 컨테이너(서블릿 엔진)에 의해 관리되는 자바기반 웹 컴포넌트로써,
  *  동적인 웹컨텐츠 생성을 가능하게 해준다.)
  */
+//@WebServlet("/ServletLifeCycle")
 public class T01_ServletLifeCycle extends HttpServlet {
 	
 	@Override

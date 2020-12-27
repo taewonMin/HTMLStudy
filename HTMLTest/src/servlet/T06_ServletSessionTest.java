@@ -5,18 +5,20 @@ import java.io.PrintWriter;
 import java.util.Date;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+@WebServlet("/ServletSessionTest")
 public class T06_ServletSessionTest extends HttpServlet {
 /**
  * 	세션(HttpSession)객체에 대하여
  * 
  *  - 세션을 통해서 사용자(웹브라우저)별로 구분하여 정보들을 관리할 수 있다.
  *  (세션ID 이용)
- *  - 쿠키를 사용할 때마다 보안이 향상된다.(서버에 정보가 저장되기 때문에..)
+ *  - 쿠키를 사용할 때보다 보안이 향상된다.(서버에 정보가 저장되기 때문에..)
  *  
  *  - 세션 객체를 가져오는 방법
  *    HttpSession session = request.getSession(boolean값)
@@ -45,7 +47,7 @@ public class T06_ServletSessionTest extends HttpServlet {
 		
 		String title = "재방문을 환영합니다.";
 		int visitCount = 0;	// 방문횟수
-		String userId = "sem";	// 사용자 ID
+		String userId = "tester";	// 사용자 ID
 		
 		if(session.isNew()) {	// 세션이 새로 만들어졌는지 확인
 			title = "처음 방문을 환영합니다.";

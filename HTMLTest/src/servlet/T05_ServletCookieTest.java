@@ -6,11 +6,13 @@ import java.net.URLDecoder;
 import java.net.URLEncoder;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@WebServlet("/ServletCookieTest")
 public class T05_ServletCookieTest extends HttpServlet {
 /**
  * 쿠키정보를 다루기 위한 예제
@@ -73,8 +75,8 @@ public class T05_ServletCookieTest extends HttpServlet {
 					out.println("삭제한 쿠키 : " + cookie.getName() + "<br>");
 				}
 				
-				out.println("name : " + cookie.getName() + "<br>");
-				out.println("value : " + URLDecoder.decode(cookie.getValue(), "utf-8") + "<br>");
+				out.println("쿠키명 : " + cookie.getName() + "<br>");
+				out.println("쿠키값 : " + URLDecoder.decode(cookie.getValue(), "utf-8") + "<br>");
 				out.println("<hr>");
 			}
 		}else {
@@ -103,8 +105,8 @@ public class T05_ServletCookieTest extends HttpServlet {
 			out.println("<h2>" + title + "</h2>");
 			for(int i=0; i<cookies.length; i++) {
 				cookie = cookies[i];
-				out.println("name : " + cookie.getName() + "<br>");
-				out.println("value : " + URLDecoder.decode(cookie.getValue(), "utf-8") + "<br>");
+				out.println("쿠키명 : " + cookie.getName() + "<br>");
+				out.println("쿠키값 : " + URLDecoder.decode(cookie.getValue(), "utf-8") + "<br>");
 				out.println("<hr>");
 			}
 		}else {
@@ -144,7 +146,7 @@ public class T05_ServletCookieTest extends HttpServlet {
 		
 		// 쿠키 소멸시간 설정(초단위) => 지정하지 않으면 브라우저가 종료할때 쿠키를 함께 삭제한다.
 		userId.setMaxAge(60 * 60 * 24);	// 1일
-		name.setMaxAge(60 * 60 * 48);	// 2일
+//		name.setMaxAge(60 * 60 * 48);	// 2일
 		
 		// 응답헤더에 쿠키 추가하기
 		resp.addCookie(userId);
