@@ -30,9 +30,7 @@
 	<select id="searchBoard" parameterClass="String" resultMap="boardMap">
 		
 		select * from jdbc_board
-		where board_title like '%'||#search#||'%'
-		   or board_content like '%'||#search#||'%'
-		order by 1
+		where board_no = #boardNo#
 		
 	</select>
 	
