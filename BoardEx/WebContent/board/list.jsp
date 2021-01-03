@@ -48,5 +48,15 @@
 		 }
 	  %>
 	</table>
+	
+	<% 
+		if(msg.equals("성공")){
+			%>
+				<script type="text/javascript">
+					alert("정상적으로 처리되었습니다.");
+				</script>
+			<%
+		}
+	%>
 </body>
 </html>

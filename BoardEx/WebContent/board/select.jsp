@@ -3,6 +3,8 @@
     pageEncoding="UTF-8"%>
 <% 
 	BoardVO bv = (BoardVO) request.getAttribute("boardVO");
+
+	String content = bv.getBoardContent().replaceAll(System.lineSeparator(), "<br>");	// 시스템 별 줄바꿈
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -30,7 +32,7 @@
 		</tr>
 		<tr>
 			<td>내용:</td>
-			<td><%= bv.getBoardContent() %></td>
+			<td><%= content %></td>
 		</tr>
 		<tr>
 			<td colspan="2">
