@@ -37,14 +37,10 @@
 	<update id="updateBoard" parameterClass="boardVO">
 		
 		update jdbc_board
-		set board_title = #boardTitle#,
-			board_content = #boardContent#
-		where board_no = (select board_no 
-					      from (select rownum as rn,
-					                   board_no
-					            from jdbc_board
-					            order by 2)
-					      where rn = #boardNo#)
+		set board_title = #boardTitle#
+			,board_content = #boardContent#
+			,board_date = sysdate
+		where board_no = #boardNo#
 		
 	</update>
 	

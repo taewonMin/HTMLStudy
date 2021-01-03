@@ -5,6 +5,8 @@
 	BoardVO bv = (BoardVO) request.getAttribute("boardVO");
 
 	String content = bv.getBoardContent().replaceAll(System.lineSeparator(), "<br>");	// 시스템 별 줄바꿈
+	
+	String msg = request.getParameter("msg") == null ? "" : request.getParameter("msg");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -37,10 +39,19 @@
 		<tr>
 			<td colspan="2">
 				<a href="list.do">[목록]</a>
-				<a href="update.do?boardNo=<%= bv.getBoardNo() %>">[글정보 수정]</a>
+				<a href="update.do?boardNo=<%= bv.getBoardNo() %>&boardWriter=<%= bv.getBoardWriter() %>">[글정보 수정]</a>
 				<a href="delete.do?boardNo=<%= bv.getBoardNo() %>">[글정보 삭제]</a>
 			</td>
 		</tr>
 	</table>
+	<%
+		if(msg.equals("성공")){
+			%>
+			<script type="text/javascript">
+				alert("글이 수정되었습니다.");
+			</script>
+			<%
+		}
+	%>
 </body>
 </html>
