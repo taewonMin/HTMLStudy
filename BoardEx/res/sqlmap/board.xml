@@ -51,12 +51,7 @@
 	<delete id="deleteBoard" parameterClass="Integer">
 	
 		delete jdbc_board
-		where board_no = (select board_no 
-					      from (select rownum as rn,
-					              	   board_no
-					            from jdbc_board
-					            order by 2)
-					      where rn = #boardNo#)
+		where board_no = #boardNo#
 	
 	</delete>
 
