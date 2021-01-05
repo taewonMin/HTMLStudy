@@ -46,7 +46,6 @@ public class WebController extends HttpServlet {
 			
 			try {
 				Class<?> klass = Class.forName(handlerProp.getProperty(reqUrl));
-				
 				CommandHandler handlerInsatance = (CommandHandler) klass.newInstance();
 				cmdHandlerMap.put(reqUrl, handlerInsatance);
 			}catch(Exception e) {

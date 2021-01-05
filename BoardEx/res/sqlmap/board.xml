@@ -30,7 +30,7 @@
 	<select id="searchBoard" parameterClass="String" resultMap="boardMap">
 		
 		select * from jdbc_board
-		where board_no = #boardNo#
+		where board_title like '%' || #search# || '%'
 		
 	</select>
 	

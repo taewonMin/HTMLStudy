@@ -1,3 +1,5 @@
+<%@page import="java.net.URLDecoder"%>
+<%@page import="java.net.URLEncoder"%>
 <%@page import="vo.BoardVO"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -13,11 +15,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>글 목록</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
 	<table border="1">
 		 <tr>
 		 	<td colspan="5"><a href="insert.do">[글 등록]</a></td>
+		 </tr>
+		 <tr>
+		 	<td colspan="4"><input type="text" name="search" style="width:95%;"></td>
+<!-- 		 	<td><a href="search.do?search">[검색]</a></td> -->
+		 	<td><input type="button" value="검색" onclick="searchBtn();"></td>
 		 </tr>
 		 <tr>
 		 	<td>글번호</td>
@@ -59,4 +67,11 @@
 		}
 	%>
 </body>
+<script type="text/javascript">
+	function searchBtn(){
+		var search = $("input[name='search']").val();
+		var url = "<%= request.getContextPath() %>" + "/board/search.do?search=" + search;
+		location.href = url;
+	}
+</script>
 </html>
