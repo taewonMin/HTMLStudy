@@ -10,15 +10,15 @@
 	    </layout>
 	</appender>
 
-	<logger name="main.BoardTest"><!-- 클래스명 -->
+<!-- 	<logger name="main.BoardTest">클래스명 -->
 <!--         <level value="DEBUG"/> --><!-- 생략하면 root의 레벨에 맞춰짐 -->
-    </logger>
-	<logger name="board.Result"><!-- 이름 -->
-        <level value="DEBUG"/>
-    </logger>
+<!--     </logger> -->
+<!-- 	<logger name="board.Result">이름 -->
+<!--         <level value="DEBUG"/> -->
+<!--     </logger> -->
 
 	<root>
-		<level value="INFO" />
+		<level value="DEBUG" />
 		<appender-ref ref="console" />
 	</root>
 

@@ -43,10 +43,10 @@ public class BoardDaoImpl implements IBoardDao{
 		return boardList;
 	}
 
-	public List<BoardVO> searchBoard(SqlMapClient smc, String search) throws SQLException {
+	public List<BoardVO> searchBoard(SqlMapClient smc, BoardVO bv) throws SQLException {
 		List<BoardVO> boardList = null;
 	
-		boardList = smc.queryForList("board.searchBoard", search);
+		boardList = smc.queryForList("board.searchBoard", bv);
 		
 		return boardList ;
 	}
@@ -55,7 +55,10 @@ public class BoardDaoImpl implements IBoardDao{
 	public int updateBoard(SqlMapClient smc, BoardVO bv) throws SQLException {
 		int chk = 0;
 		
-		chk = smc.update("board.updateBoard", bv);
+		if(bv.getBoardTitle() != null && !bv.getBoardTitle().equals("")) {
+			chk = smc.update("board.updateBoard", bv);
+		}
+		
 		
 		return chk;
 	}

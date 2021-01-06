@@ -21,10 +21,10 @@ public interface IBoardSerivce {
 	
 	/**
 	 * 게시판의 글 검색 메서드
-	 * @param search 검색할 글의 내용
+	 * @param bv 검색할 글의 내용
 	 * @return 해당 내용을 포함한 글들을 list로 반환
 	 */
-	public List<BoardVO> searchBoard(String search);
+	public List<BoardVO> searchBoard(BoardVO bv);
 	
 	/**
 	 * 게시판 글 업데이트 메서드

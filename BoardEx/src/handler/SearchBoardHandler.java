@@ -21,9 +21,12 @@ public class SearchBoardHandler implements CommandHandler {
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		
+		BoardVO bv = new BoardVO();
+		bv.setBoardTitle(req.getParameter("search"));
+		
 		IBoardSerivce ibs = BoardServiceImpl.getInstance();
 		
-		List<BoardVO> list = ibs.searchBoard(req.getParameter("search"));
+		List<BoardVO> list = ibs.searchBoard(bv);
 		
 		req.setAttribute("list", list);
 		

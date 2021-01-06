@@ -21,11 +21,12 @@ public class SelectBoardHandler implements CommandHandler {
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		
-		String boardNo = req.getParameter("boardNo");
+		BoardVO bv = new BoardVO();
+		bv.setBoardNo(Integer.parseInt(req.getParameter("boardNo")));
 		
 		IBoardSerivce ibs = BoardServiceImpl.getInstance();
 		
-		List<BoardVO> list = (List<BoardVO>) ibs.searchBoard(boardNo);
+		List<BoardVO> list = (List<BoardVO>) ibs.searchBoard(bv);
 		
 		req.setAttribute("boardVO", list.get(0));
 		

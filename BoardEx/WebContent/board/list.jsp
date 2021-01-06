@@ -17,14 +17,18 @@
 <title>글 목록</title>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
+<style>
+	a {
+		text-decoration: none;
+	}
+</style>
 <body>
-	<table border="1">
+	<table border="1" style="border-collapse: collapse;">
 		 <tr>
 		 	<td colspan="5"><a href="insert.do">[글 등록]</a></td>
 		 </tr>
 		 <tr>
 		 	<td colspan="4"><input type="text" name="search" style="width:95%;"></td>
-<!-- 		 	<td><a href="search.do?search">[검색]</a></td> -->
 		 	<td><input type="button" value="검색" onclick="searchBtn();"></td>
 		 </tr>
 		 <tr>
@@ -42,7 +46,7 @@
 				<td><%= i+1 %></td>
 				<td><%= list.get(i).getBoardWriter() %></td>
 				<td><%= list.get(i).getBoardDate().substring(0,10) %></td>
-				<td><a href="select.do?boardNo=<%= list.get(i).getBoardNo() %>"><%= list.get(i).getBoardTitle() %></a></td>
+				<td><strong><a href="select.do?boardNo=<%= list.get(i).getBoardNo() %>"><%= list.get(i).getBoardTitle() %></a></strong></td>
 				<td><%= list.get(i).getBoardContent() %></td>
 			</tr>
 	 <%

@@ -63,10 +63,10 @@ public class BoardServiceImpl implements IBoardSerivce {
 	}
 
 	@Override
-	public List<BoardVO> searchBoard(String search) {
+	public List<BoardVO> searchBoard(BoardVO bv) {
 		List<BoardVO> boardList = Collections.emptyList();
 		try {
-			boardList = boardDao.searchBoard(smc, search);	
+			boardList = boardDao.searchBoard(smc, bv);	
 		} catch(SQLException e) {
 			throw new RuntimeException("글 검색 예외 발생", e);
 		}

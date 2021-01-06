@@ -33,7 +33,7 @@ public interface IBoardDao {
 	 * @return 해당 내용을 포함한 글들을 list로 반환
 	 * @throws SQLException JDBC관련 예외객체 
 	 */
-	public List<BoardVO> searchBoard(SqlMapClient smc, String search) throws SQLException;
+	public List<BoardVO> searchBoard(SqlMapClient smc, BoardVO bv) throws SQLException;
 	
 	/**
 	 * 게시판 글 업데이트 메서드

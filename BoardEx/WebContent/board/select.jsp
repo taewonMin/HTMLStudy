@@ -14,8 +14,13 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>글 정보</title>
 </head>
+<style>
+	a {
+		text-decoration: none;
+	}
+</style>
 <body>
-	<table border="1">
+	<table border="1" style="border-collapse: collapse;">
 		<tr>
 			<td>글번호:</td>
 			<td><%= bv.getBoardNo() %></td>

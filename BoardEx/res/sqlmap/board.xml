@@ -27,10 +27,16 @@
 		
 	</select>
 	
-	<select id="searchBoard" parameterClass="String" resultMap="boardMap">
+	<select id="searchBoard" parameterClass="boardVO" resultMap="boardMap">
 		
 		select * from jdbc_board
-		where board_title like '%' || #search# || '%'
+		where 1=1
+		<isNotEqual property="boardNo" compareValue="0" prepend="AND">
+		board_no = #boardNo#
+		</isNotEqual>
+		<isNotEmpty property="boardTitle" prepend="AND">
+		board_title like '%' || #boardTitle# || '%'
+		</isNotEmpty>
 		
 	</select>
 	
