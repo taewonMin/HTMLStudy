@@ -28,15 +28,13 @@
 		 	<td colspan="5"><a href="insert.do">[글 등록]</a></td>
 		 </tr>
 		 <tr>
-		 	<td colspan="4"><input type="text" name="search" style="width:95%;"></td>
-		 	<td><input type="button" value="검색" onclick="searchBtn();"></td>
+		 	<td colspan="4"><input type="text" name="search" style="width:80%;"><input type="button" value="검색" onclick="searchBtn();" ></td>
 		 </tr>
 		 <tr>
 		 	<td>글번호</td>
 		 	<td>작성자</td>
 		 	<td>날짜</td>
 		 	<td>제목</td>
-		 	<td>내용</td>
 		 </tr>
 	 <% 
 		 if(list.size() > 0){
@@ -47,7 +45,6 @@
 				<td><%= list.get(i).getBoardWriter() %></td>
 				<td><%= list.get(i).getBoardDate().substring(0,10) %></td>
 				<td><strong><a href="select.do?boardNo=<%= list.get(i).getBoardNo() %>"><%= list.get(i).getBoardTitle() %></a></strong></td>
-				<td><%= list.get(i).getBoardContent() %></td>
 			</tr>
 	 <%
 			 }
